@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keyword" content="">
+  <link rel="icon" href="">
+  <title>DEMS生成器</title>
+  <style>
+    body {
+      color: rgb(51, 51, 51);
+      font-family: 微软雅黑, "Hiragino Sans GB", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+      font-size: 14px;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      background: rgb(241, 242, 247);
+      padding: 0px !important;
+      margin: 0px !important;
+    }
+	
+	div {
+	 width:80%;
+	 margin:0 auto;
+	}
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+	  
+    }
+    table{
+      width:80%;
+      margin:0 auto;
+      background: #fff;
+    }
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+      line-height:20px;
+    }
+    .table-bordered {
+      border: 1px solid #ddd;
+    }
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+      padding: 10px;
+      text-align: center;
+      /* border-right: 1px solid #ddd; */
+    }
+    .table thead > tr > th {
+      font-weight: normal;
+      background: #F7F7F7;
+      border-bottom: 1px solid #ddd;
+      color: #666;
+    }
+    .table > thead:first-child > tr:first-child > th {
+      border-top: 0;
+    }
+    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+      border: 1px solid #ddd;
+    }
+
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+    .red {
+      background: #ff6c60 !important;
+      color: #fff !important;
+    }
+    .btn {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      height: 32px;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-family: 微软雅黑, "Hiragino Sans GB", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+    }
+    input[type="text"]{
+      border: 1px solid #e2e2e4;
+      box-shadow: none;
+      font-family: 微软雅黑, "Hiragino Sans GB", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+      /* color: #c2c2c2; */
+    }
+    input[type="text"] {
+      width: 70%;
+      height: 32px;
+      padding: 6px 12px;
+      font-size: 13px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+    input[type="text"], textarea, select, button {
+      outline: none !important;
+    }
+  </style>
+</head>
+<body>
+<h2 style="text-align:center;margin:20px 0">DEMS生成器</h2>
+<form action="task.php"  method="POST"/>
+<div >
+实体类： <input type="text"  name="table" style="width:200px; margin-bottom:10px;"/>
+</div>
+<table class="table table-bordered">
+  <thead>
+  <tr role="row">
+    <th role="columnheader" rowspan="1" colspan="1">字段名
+    </th>
+    <th role="columnheader">类型
+    </th>
+    <th role="columnheader">长度
+    </th>
+	<th role="columnheader">主键
+    </th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr class="odd">
+    <td class=" sorting_1"><input name="name[]" type="text"></td>
+    <td class=" "> <select name="type[]"><option value="int">int</option> <option value="String">String</option> <option value="Date">Date</option>  </select></td>
+    <td class=" "><input name="size[]" type="text"></td>
+    <td class=" "><input name="key[0]" type="checkbox" value="1"></td>
+  </tr>
+  <tr class="odd">
+    <td class=" sorting_1"><input name="name[]" type="text"></td>
+    <td class=" "> <select name="type[]"><option value="int">int</option> <option value="String">String</option> <option value="Date">Date</option>  </select></td>
+    <td class=" "><input name="size[]" type="text"></td>
+    <td class=" "><input name="key[1]" type="checkbox" value="1"></td>
+  </tr>
+  <tr class="odd">
+    <td class=" sorting_1"><input name="name[]" type="text"></td>
+    <td class=" "> <select name="type[]"><option value="int">int</option> <option value="String">String</option> <option value="Date">Date</option>  </select></td>
+    <td class=" "><input name="size[]" type="text"></td>
+    <td class=" "><input name="key[2]" type="checkbox" value="1"></td>
+  </tr>
+  <tr class="odd">
+    <td class=" sorting_1"><input name="name[]" type="text"></td>
+    <td class=" "> <select name="type[]"><option value="int">int</option> <option value="String">String</option> <option value="Date">Date</option>  </select></td>
+    <td class=" "><input name="size[]" type="text"></td>
+    <td class=" "><input name="key[3]" type="checkbox" value="1"></td>
+  </tr>
+  <tr class="odd">
+    <td class=" sorting_1"><input name="name[]" type="text"></td>
+    <td class=" "> <select name="type[]"><option value="int">int</option> <option value="String">String</option> <option value="Date">Date</option>  </select></td>
+    <td class=" "><input name="size[]" type="text"></td>
+    <td class=" "><input name="key[4]" type="checkbox" value="1"></td>
+  </tr>
+  <tr class="odd">
+    <td class=" sorting_1"><input name="name[]" type="text"></td>
+    <td class=" "> <select name="type[]"><option value="int">int</option> <option value="String">String</option> <option value="Date">Date</option>  </select></td>
+    <td class=" "><input name="size[]" type="text"></td>
+    <td class=" "><input name="key[5]" type="checkbox" value="1"></td>
+  </tr>
+
+  </tbody>
+</table>
+<div style="text-align:center;margin:20px 0">
+  <button class="btn red" type="submit">
+    一键生成
+  </button>
+</div>
+</form>
+</body>
+</html>
