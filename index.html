@@ -117,9 +117,9 @@
 </head>
 <body>
 <h2 style="text-align:center;margin:20px 0">DEMS生成器</h2>
-<form action="task.php"  method="POST"/>
+<form  method="POST" id="form1"/>
 <div >
-实体类： <input type="text"  name="table" style="width:200px; margin-bottom:10px;"/>
+数据表名： <input type="text"  name="table" style="width:200px; margin-bottom:10px;"/>
 </div>
 <table class="table table-bordered">
   <thead>
@@ -128,7 +128,7 @@
     </th>
     <th role="columnheader">类型
     </th>
-    <th role="columnheader">长度
+    <th role="columnheader" rowspan="1" colspan="1">关联字段
     </th>
 	<th role="columnheader">主键
     </th>
@@ -175,10 +175,34 @@
   </tbody>
 </table>
 <div style="text-align:center;margin:20px 0">
-  <button class="btn red" type="submit">
+  <button class="btn red" type="button" id="submit">
     一键生成
   </button>
 </div>
 </form>
 </body>
+<script src="jquery.js"></script>
+<script>
+    $(function(){
+        $('#submit').on('click', function (e) {
+            var e = event || window.event, form = $('#form1'), url;
+            if (e && e.preventDefault)
+                e.preventDefault();
+            else window.event.returnValue = false;
+            var form = $("#form1");
+            var url = "task.php";
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: form.serialize(),
+                success: function (data) {
+                    alert(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("请求错误");
+                },
+            });
+        })
+    });
+</script>
 </html>
