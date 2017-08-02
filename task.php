@@ -219,7 +219,7 @@ class Service
     function findById($entryClass, $pkId)
     {
         $ucPkId = ucfirst($pkId);
-        return "public {$entryClass} get{$entryClass}By{$ucPkId}(int {$pkId}) { return {$this->lcDaoName}.find{$entryClass}By{$ucPkId}({$pkId}); }";
+        return "public {$entryClass} get{$entryClass}By{$ucPkId}(int {$pkId}) { return {$this->lcDaoName}.get{$entryClass}By{$ucPkId}({$pkId}); }";
     }
 
     function delete($pkId)
@@ -294,7 +294,7 @@ class Mapper {
     }
 
     function getMapperDao() {
-        return "<mapper namespace=\"{$this->daoClassName}\">";
+        return "<mapper namespace=\"{$this->daoClassName}\">\n";
     }
 
     function getResultMap() {
@@ -304,28 +304,28 @@ class Mapper {
             $entryFiledName = $this->entry->nameToFiledName($filedName);
             $string .= "<id column=\"{$filedName}\" property=\"{$entryFiledName}\"/>";
         }
-        $string .= "</resultMap>";
+        $string .= "</resultMap>\n";
         return $string;
     }
 
     function getList()
     {
         return " <select id=\"get{$this->entryClassName}List\" resultMap=\"{$this->entryClassName}ResultMap\">
-        SELECT * FROM {$this->tableName} ORDER BY {$this->sqlPkId} DESC limit #{limit} offset #{offset} </select>";
+        SELECT * FROM {$this->tableName} ORDER BY {$this->sqlPkId} DESC limit #{limit} offset #{offset} </select>\n";
     }
 
     function findById()
     {
         $ucPkId = ucfirst($this->pkId);
         return "  <select id=\"get{$this->entryClassName}By{$ucPkId}\" resultMap=\"{$this->entryClassName}ResultMap\">
-        SELECT * FROM {$this->tableName} WHERE {$this->sqlPkId} = #{{$this->pkId}}</select>";
+        SELECT * FROM {$this->tableName} WHERE {$this->sqlPkId} = #{{$this->pkId}}</select>\n";
     }
 
     function delete()
     {
         return "<delete id=\"delete\">
         DELETE FROM {$this->tableName} WHERE {$this->sqlPkId} = #{{$this->pkId}}
-    </delete>";
+    </delete>\n";
     }
 
     function update()
@@ -344,7 +344,7 @@ class Mapper {
             }
          }
         $string .= "</set>";
-        $string .= "WHERE {$this->sqlPkId} = #{{$this->pkId}}  </update>";
+        $string .= "WHERE {$this->sqlPkId} = #{{$this->pkId}}  </update>\n";
         return $string;
     }
 
@@ -360,9 +360,17 @@ class Mapper {
                 $entryFiledNameList[] = $entryFiledName;
             }
         }
-        $string .= " ( ". implode(" , " , $filedNameList) . " ) VALUE  ";
-        $string .= " (". implode(" , #{", $entryFiledNameList) . "} ) ";
-        $string .= "</insert>";
+        $string .= " ( ". implode(" , " , $filedNameList) . " ) VALUE  ( ";
+        $length = count($filedNameList) - 1;
+        foreach ($entryFiledNameList as $key => $value) {
+            if ($key == $length) {
+                $string .= "#{" . $value . "}";
+            } else {
+                $string .= "#{" . $value . "} , ";
+            }
+        }
+        $string .= " ) ";
+        $string .= "</insert>\n";
         return $string;
     }
 
@@ -394,7 +402,7 @@ class Mapper {
     {
         return "<select id=\"getTotal\" resultType=\"int\">
         SELECT count(*) FROM {$this->tableName}
-        </select>";
+        </select>\n";
     }
 
 

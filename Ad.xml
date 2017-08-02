@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="AdDao">
+ <resultMap type="Ad" id="AdResultMap"><id column="ad_id" property="adId"/><id column="ad_title" property="adTitle"/><id column="ad_image" property="adImage"/><id column="ad_url" property="adUrl"/></resultMap>
+ <select id="getAdList" resultMap="AdResultMap">
+        SELECT * FROM ad ORDER BY ad_id DESC limit #{limit} offset #{offset} </select>
+  <select id="getAdByAdId" resultMap="AdResultMap">
+        SELECT * FROM ad WHERE ad_id = #{adId}</select>
+<delete id="delete">
+        DELETE FROM ad WHERE ad_id = #{adId}
+    </delete>
+ <update id="update"> UPDATE ad
+<set> <if test="adTitle > 0">ad_title=#{adTitle},</if><if test="adImage > 0">ad_image=#{adImage},</if><if test="adUrl > 0">ad_url=#{adUrl},</if></set>WHERE ad_id = #{adId}  </update>
+<insert id="insert" useGeneratedKeys="true">
+        INSERT INTO ad  ( ad_title , ad_image , ad_url ) VALUE  ( #{adTitle} , #{adImage} , #{adUrl} ) </insert>
+ <select id="getCount" resultType="int"> 
+                       SELECT count(*) FROM ad <where> <if test="adId > 0">
+                AND ad_id <![CDATA[<]]><![CDATA[>]]> #{adId}
+            </if> <if test="adTitle != null">
+                ad_title = #{adTitle}
+                     </if> <if test="adImage != null">
+                ad_image = #{adImage}
+                     </if> <if test="adUrl != null">
+                ad_url = #{adUrl}
+                     </if> </where>
+    </select><select id="getTotal" resultType="int">
+        SELECT count(*) FROM ad
+        </select>
+</mapper>

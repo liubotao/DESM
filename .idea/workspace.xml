@@ -23,25 +23,96 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="task.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="task.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="344" column="10" selection-start-line="344" selection-start-column="10" selection-end-line="344" selection-end-column="10" />
+            <state relative-caret-position="128">
+              <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
               <folding>
-                <marker date="1501662053000" expanded="true" signature="9137:9251" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="9449:9541" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="9617:9712" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="9824:10392" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="10596:10618" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="11273:11346" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="11299:11320" placeholder="SELECT count... $" />
-                <marker date="1501662053000" expanded="true" signature="11299:11338" placeholder="SELECT count... " />
-                <marker date="1501662053000" expanded="true" signature="11613:11631" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="11613:11692" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="11779:11801" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="11779:11878" placeholder="..." />
-                <marker date="1501662053000" expanded="true" signature="12072:12138" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="9140:9254" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="9454:9546" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="9624:9719" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="9833:10401" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="10607:10629" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="11523:11596" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="11549:11570" placeholder="SELECT count... $" />
+                <marker date="1501667756000" expanded="true" signature="11549:11588" placeholder="SELECT count... " />
+                <marker date="1501667756000" expanded="true" signature="11863:11881" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="11863:11942" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="12029:12051" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="12029:12128" placeholder="..." />
+                <marker date="1501667756000" expanded="true" signature="12322:12388" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ad.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Ad.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+              <folding>
+                <marker date="1501667760000" expanded="true" signature="449:517" placeholder="SELECT * FRO... ad" />
+                <marker date="1501667760000" expanded="true" signature="588:626" placeholder="SELECT * FRO... ad" />
+                <marker date="1501667760000" expanded="true" signature="665:701" placeholder="DELETE FROM " />
+                <marker date="1501667760000" expanded="true" signature="738:919" placeholder="UPDATE ad ad... " />
+                <marker date="1501667760000" expanded="true" signature="984:1078" placeholder="INSERT INTO ad... " />
+                <marker date="1501667760000" expanded="true" signature="1629:1652" placeholder="SELECT count... ad" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AdDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="257" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ad.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ad.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="28" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="1" />
+              <folding>
+                <element signature="e#142#143#0" expanded="false" />
+                <element signature="e#167#168#0" expanded="false" />
+                <element signature="e#191#192#0" expanded="false" />
+                <element signature="e#216#217#0" expanded="false" />
+                <element signature="e#258#259#0" expanded="false" />
+                <element signature="e#289#290#0" expanded="false" />
+                <element signature="e#319#320#0" expanded="false" />
+                <element signature="e#347#348#0" expanded="false" />
+                <element signature="e#389#390#0" expanded="false" />
+                <element signature="e#420#421#0" expanded="false" />
+                <element signature="e#450#451#0" expanded="false" />
+                <element signature="e#478#479#0" expanded="false" />
+                <element signature="e#516#517#0" expanded="false" />
+                <element signature="e#543#544#0" expanded="false" />
+                <element signature="e#571#572#0" expanded="false" />
+                <element signature="e#597#598#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AdService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+              <folding>
+                <marker date="1501667760000" expanded="true" signature="332:355" placeholder="{...}" />
+                <marker date="1501667760000" expanded="true" signature="400:429" placeholder="{...}" />
+                <marker date="1501667760000" expanded="true" signature="455:476" placeholder="{...}" />
+                <marker date="1501667760000" expanded="true" signature="501:528" placeholder="{...}" />
+                <marker date="1501667760000" expanded="true" signature="555:585" placeholder="{...}" />
+                <marker date="1501667760000" expanded="true" signature="607:635" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -77,6 +148,7 @@
         <option value="$PROJECT_DIR$/Template.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/task.php" />
+        <option value="$PROJECT_DIR$/Ad.xml" />
       </list>
     </option>
   </component>
@@ -574,12 +646,12 @@
       <option name="presentableId" value="Default" />
       <updated>1501518689703</updated>
       <workItem from="1501518691494" duration="27000" />
-      <workItem from="1501548363550" duration="20505000" />
+      <workItem from="1501548363550" duration="25575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20532000" />
+    <option name="totallyTimeSpent" value="25602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="733" extended-state="6" />
@@ -595,7 +667,7 @@
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -642,19 +714,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1501662053000" expanded="true" signature="9137:9251" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="9449:9541" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="9617:9712" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="9824:10392" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="10596:10618" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11273:11346" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11299:11320" placeholder="SELECT count... $" />
-            <marker date="1501662053000" expanded="true" signature="11299:11338" placeholder="SELECT count... " />
-            <marker date="1501662053000" expanded="true" signature="11613:11631" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11613:11692" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11779:11801" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11779:11878" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="12072:12138" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="9140:9254" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="9454:9546" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="9624:9719" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="9833:10401" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="10607:10629" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="11523:11596" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="11549:11570" placeholder="SELECT count... $" />
+            <marker date="1501667756000" expanded="true" signature="11549:11588" placeholder="SELECT count... " />
+            <marker date="1501667756000" expanded="true" signature="11863:11881" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="11863:11942" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="12029:12051" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="12029:12128" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="12322:12388" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -739,24 +811,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AdDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="257" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="28" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <element signature="e#142#143#0" expanded="false" />
+            <element signature="e#167#168#0" expanded="false" />
+            <element signature="e#191#192#0" expanded="false" />
+            <element signature="e#216#217#0" expanded="false" />
+            <element signature="e#258#259#0" expanded="false" />
+            <element signature="e#289#290#0" expanded="false" />
+            <element signature="e#319#320#0" expanded="false" />
+            <element signature="e#347#348#0" expanded="false" />
+            <element signature="e#389#390#0" expanded="false" />
+            <element signature="e#420#421#0" expanded="false" />
+            <element signature="e#450#451#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
+            <element signature="e#516#517#0" expanded="false" />
+            <element signature="e#543#544#0" expanded="false" />
+            <element signature="e#571#572#0" expanded="false" />
+            <element signature="e#597#598#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <folding>
+            <marker date="1501667760000" expanded="true" signature="332:355" placeholder="{...}" />
+            <marker date="1501667760000" expanded="true" signature="400:429" placeholder="{...}" />
+            <marker date="1501667760000" expanded="true" signature="455:476" placeholder="{...}" />
+            <marker date="1501667760000" expanded="true" signature="501:528" placeholder="{...}" />
+            <marker date="1501667760000" expanded="true" signature="555:585" placeholder="{...}" />
+            <marker date="1501667760000" expanded="true" signature="607:635" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/task.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="344" column="10" selection-start-line="344" selection-start-column="10" selection-end-line="344" selection-end-column="10" />
+        <state relative-caret-position="128">
+          <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
           <folding>
-            <marker date="1501662053000" expanded="true" signature="9137:9251" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="9449:9541" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="9617:9712" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="9824:10392" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="10596:10618" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11273:11346" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11299:11320" placeholder="SELECT count... $" />
-            <marker date="1501662053000" expanded="true" signature="11299:11338" placeholder="SELECT count... " />
-            <marker date="1501662053000" expanded="true" signature="11613:11631" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11613:11692" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11779:11801" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="11779:11878" placeholder="..." />
-            <marker date="1501662053000" expanded="true" signature="12072:12138" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="9140:9254" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="9454:9546" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="9624:9719" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="9833:10401" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="10607:10629" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="11523:11596" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="11549:11570" placeholder="SELECT count... $" />
+            <marker date="1501667756000" expanded="true" signature="11549:11588" placeholder="SELECT count... " />
+            <marker date="1501667756000" expanded="true" signature="11863:11881" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="11863:11942" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="12029:12051" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="12029:12128" placeholder="..." />
+            <marker date="1501667756000" expanded="true" signature="12322:12388" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ad.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <marker date="1501667760000" expanded="true" signature="449:517" placeholder="SELECT * FRO... ad" />
+            <marker date="1501667760000" expanded="true" signature="588:626" placeholder="SELECT * FRO... ad" />
+            <marker date="1501667760000" expanded="true" signature="665:701" placeholder="DELETE FROM " />
+            <marker date="1501667760000" expanded="true" signature="738:919" placeholder="UPDATE ad ad... " />
+            <marker date="1501667760000" expanded="true" signature="984:1078" placeholder="INSERT INTO ad... " />
+            <marker date="1501667760000" expanded="true" signature="1629:1652" placeholder="SELECT count... ad" />
           </folding>
         </state>
       </provider>
