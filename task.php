@@ -129,7 +129,7 @@ class Dao
     function findById($entryClass, $pkId)
     {
         $ucPkId = ucfirst($pkId);
-        return "{$entryClass} find{$entryClass}By{$ucPkId}(int {$pkId});";
+        return "{$entryClass} get{$entryClass}By{$ucPkId}(int {$pkId});";
     }
 
     function delete($pkId)
@@ -219,7 +219,7 @@ class Service
     function findById($entryClass, $pkId)
     {
         $ucPkId = ucfirst($pkId);
-        return "public {$entryClass} find{$entryClass}By{$ucPkId}(int {$pkId}) { return {$this->lcDaoName}.find{$entryClass}By{$ucPkId}({$pkId}); }";
+        return "public {$entryClass} get{$entryClass}By{$ucPkId}(int {$pkId}) { return {$this->lcDaoName}.find{$entryClass}By{$ucPkId}({$pkId}); }";
     }
 
     function delete($pkId)
@@ -316,8 +316,9 @@ class Mapper {
 
     function findById()
     {
-        return "  <select id=\"get{$this->entryClassName}\" resultMap=\"{$this->entryClassName}ResultMap\">
-        SELECT * FROM {$this->tableName} WHERE {$this->sqlPkId} = #{$this->pkId}</select>";
+        $ucPkId = ucfirst($this->pkId);
+        return "  <select id=\"get{$this->entryClassName}By{$ucPkId}\" resultMap=\"{$this->entryClassName}ResultMap\">
+        SELECT * FROM {$this->tableName} WHERE {$this->sqlPkId} = #{{$this->pkId}}</select>";
     }
 
     function delete()
@@ -332,10 +333,14 @@ class Mapper {
         $string = " <update id=\"update\"> UPDATE {$this->tableName}
 <set> ";
         foreach ($this->data as $key => $row) {
-            if (!isset($data['key'][$key])) {
+            if ($row['pk'] != 1) {
                 $filedName = $row['name'];
                 $entryFiledName = $this->entry->nameToFiledName($filedName);
-                $string .= "<if test=\"{$entryFiledName} != null\">{$filedName}=#{{$entryFiledName}},</if>";
+                if ($row['type'] == "int") {
+                    $string .= "<if test=\"{$entryFiledName} != null\">{$filedName}=#{{$entryFiledName}},</if>";
+                } else {
+                    $string .= "<if test=\"{$entryFiledName} > 0\">{$filedName}=#{{$entryFiledName}},</if>";
+                }
             }
          }
         $string .= "</set>";
@@ -369,7 +374,7 @@ class Mapper {
             $filedName = $row['name'];
             $entryFiledName = $this->entry->nameToFiledName($filedName);
 
-            if (!isset($data['key'][$key])) {
+            if ($row['pk'] != 1) {
                 $string .= " <if test=\"{$entryFiledName} != null\">
                 {$filedName} = #{{$entryFiledName}}
                      </if>";
