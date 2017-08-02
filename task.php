@@ -30,9 +30,9 @@ $map = new Mapper($table, $entryClassName, $sqlPkId, $pkId, $data);
 file_put_contents($dir."/".$entryClassName.".xml", $map->getMapper());
 
 $dao = new Dao();
-file_put_contents($dir."/".$dao->getDaoName($table).".java", $dao->getDaoClass($entryClassName, $pkId));
+file_put_contents($dir."/".$dao->getDaoName($entryClassName).".java", $dao->getDaoClass($entryClassName, $pkId));
 $service = new Service();
-file_put_contents($dir."/".$service->getServiceName($table).".java", $service->getServiceClass($entryClassName, $pkId));
+file_put_contents($dir."/".$service->getServiceName($entryClassName).".java", $service->getServiceClass($entryClassName, $pkId));
 
 
 class Entry
@@ -44,8 +44,8 @@ class Entry
 
     function getEntryClass($name, $data)
     {
-        $className = ucfirst($name);
-        $string = "class {$className} { ";
+        $className = $this->getEntryName($name);
+        $string = " public class {$className} { ";
         foreach ($data as $row) {
             $string .= $this->defineFiled($row['name'], $row['type']);
         }
@@ -171,6 +171,8 @@ class Service
 
     public $daoName;
 
+    public $lcDaoName;
+
     function getDaoName($name)
     {
         $daoClassName = ucfirst($name);
@@ -187,6 +189,8 @@ class Service
     {
         $className = $this->getServiceName($entryClass);
         $this->daoName = $this->getDaoName($entryClass);
+        $this->lcDaoName = lcfirst($this->daoName);
+
         $string = "@Service \n public class {$className} { ";
         $string .= "@Autowired \n private {$this->daoName} " .lcfirst($this->daoName)."; \n";
         $string .= $this->getList($entryClass);
@@ -204,50 +208,50 @@ class Service
 
     function getList($entryClass)
     {
-        return "List<{$entryClass}> get{$entryClass}List (HashMap map) { return {$this->daoName}.getList(map); }";
+        return "public List<{$entryClass}> get{$entryClass}List (HashMap map) { return {$this->lcDaoName}.get{$entryClass}List (HashMap map); }";
     }
 
     function getSearchResult($entryClass)
     {
-        return "List<{$entryClass}> getSearchResult (HashMap map) { return {$this->daoName}.getSearchResult(map); }";
+        return "public List<{$entryClass}> getSearchResult (HashMap map) { return {$this->lcDaoName}.getSearchResult(map); }";
     }
 
     function findById($entryClass, $pkId)
     {
         $ucPkId = ucfirst($pkId);
-        return "{$entryClass} find{$entryClass}By{$ucPkId}(int {$pkId}) { return {$this->daoName}.find{$entryClass}By{$ucPkId}({$pkId}); }";
+        return "public {$entryClass} find{$entryClass}By{$ucPkId}(int {$pkId}) { return {$this->lcDaoName}.find{$entryClass}By{$ucPkId}({$pkId}); }";
     }
 
     function delete($pkId)
     {
-        return "void delete(int {$pkId}) { {$this->daoName}.delete($pkId); }";
+        return "public void delete(int {$pkId}) { {$this->lcDaoName}.delete($pkId); }";
     }
 
     function deleteByPkIds() {
-        return "void deleteByPkIds(List<Integer> ids) { {$this->daoName}.deleteByPkIds(ids); } ";
+        return "public void deleteByPkIds(List<Integer> ids) { {$this->lcDaoName}.deleteByPkIds(ids); } ";
     }
 
     function update($entryClass)
     {
         $lcEntryClass = lcfirst($entryClass);
-        return "void update({$entryClass} {$lcEntryClass}){ {$this->daoName}.update($lcEntryClass); }";
+        return "public void update({$entryClass} {$lcEntryClass}){ {$this->lcDaoName}.update($lcEntryClass); }";
     }
 
     function insert($entryClass)
     {
         $lcEntryClass = lcfirst($entryClass);
-        return "int insert({$entryClass} {$lcEntryClass}) { return {$this->daoName}.insert($lcEntryClass);}";
+        return "public int insert({$entryClass} {$lcEntryClass}) { return {$this->lcDaoName}.insert($lcEntryClass);}";
     }
 
     function getCount($entryClass)
     {
         $lcEntryClass = lcfirst($entryClass);
-        return "int getCount({$entryClass} {$lcEntryClass}) { return {$this->daoName}.getCount({$lcEntryClass}); }";
+        return "public int getCount({$entryClass} {$lcEntryClass}) { return {$this->lcDaoName}.getCount({$lcEntryClass}); }";
     }
 
     function getTotal()
     {
-        return "int getTotal() { return {$this->daoName}.getTotal(); }";
+        return "public int getTotal() { return {$this->lcDaoName}.getTotal(); }";
     }
 }
 
@@ -318,14 +322,14 @@ class Mapper {
 
     function delete()
     {
-        return "<delete id=\"delete{$this->entryClassName}\">
+        return "<delete id=\"delete\">
         DELETE FROM {$this->tableName} WHERE {$this->sqlPkId} = #{{$this->pkId}}
     </delete>";
     }
 
     function update()
     {
-        $string = " <update id=\"update{$this->entryClassName}\"> UPDATE {$this->tableName}
+        $string = " <update id=\"update\"> UPDATE {$this->tableName}
 <set> ";
         foreach ($this->data as $key => $row) {
             if (!isset($data['key'][$key])) {
@@ -341,7 +345,7 @@ class Mapper {
 
     function insert()
     {
-        $string = "<insert id=\"insert{$this->entryClassName}\" useGeneratedKeys=\"true\">
+        $string = "<insert id=\"insert\" useGeneratedKeys=\"true\">
         INSERT INTO {$this->tableName} ";
         foreach ($this->data as $key => $row) {
             if ($row['pk'] != 1) {
@@ -352,14 +356,14 @@ class Mapper {
             }
         }
         $string .= " ( ". implode(" , " , $filedNameList) . " ) VALUE  ";
-        $string .= " (". implode(" , ", $entryFiledNameList) . " ) ";
+        $string .= " (". implode(" , #{", $entryFiledNameList) . "} ) ";
         $string .= "</insert>";
         return $string;
     }
 
     function getCount()
     {
-        $string = " <select id=\"get{$this->entryClassName}Total\" resultType=\"int\"> 
+        $string = " <select id=\"getCount\" resultType=\"int\"> 
                        SELECT count(*) FROM {$this->tableName} <where> ";
         foreach ($this->data as $key => $row) {
             $filedName = $row['name'];
@@ -383,7 +387,7 @@ class Mapper {
 
     function getTotal()
     {
-        return "<select id=\"getCount\" resultType=\"int\">
+        return "<select id=\"getTotal\" resultType=\"int\">
         SELECT count(*) FROM {$this->tableName}
         </select>";
     }
