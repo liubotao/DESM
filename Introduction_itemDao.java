@@ -1,2 +1,0 @@
-@Repository 
- public interface IntroductionItemDao { List<IntroductionItem> getIntroductionItemList (HashMap map);List<IntroductionItem> getSearchResult (HashMap map);IntroductionItem findIntroductionItemByIntroductionItemId(int introductionItemId);void delete(int introductionItemId);void deleteByPkIds(List<Integer> ids); void update(IntroductionItem introductionItem);int insert(IntroductionItem introductionItem);int getCount(IntroductionItem introductionItem);int getTotal();}
