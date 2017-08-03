@@ -337,9 +337,9 @@ class Mapper {
                 $filedName = $row['name'];
                 $entryFiledName = $this->entry->nameToFiledName($filedName);
                 if ($row['type'] == "int") {
-                    $string .= "<if test=\"{$entryFiledName} != null\">{$filedName}=#{{$entryFiledName}},</if>";
-                } else {
                     $string .= "<if test=\"{$entryFiledName} > 0\">{$filedName}=#{{$entryFiledName}},</if>";
+                } else {
+                    $string .= "<if test=\"{$entryFiledName} != null\">{$filedName}=#{{$entryFiledName}},</if>";
                 }
             }
          }
