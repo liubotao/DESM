@@ -59,7 +59,7 @@ class Entry
     function defineFiled($name, $type = "int")
     {
         $filedName = $this->nameToFiledName($name);
-        return "private $type " . $filedName . "; \r\n";
+        return "private $type " . $filedName . "; \r\n\n";
     }
 
     function nameToFiledName($name)
@@ -208,7 +208,7 @@ class Service
 
     function getList($entryClass)
     {
-        return "public List<{$entryClass}> get{$entryClass}List (HashMap map) { return {$this->lcDaoName}.get{$entryClass}List (HashMap map); }";
+        return "public List<{$entryClass}> get{$entryClass}List (HashMap map) { return {$this->lcDaoName}.get{$entryClass}List (map); }";
     }
 
     function getSearchResult($entryClass)
